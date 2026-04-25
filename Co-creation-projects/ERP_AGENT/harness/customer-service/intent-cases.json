@@ -1,0 +1,26 @@
+[
+  {
+    "message": "开店服务费可以退款吗？",
+    "expectedIntent": "customer_service_faq"
+  },
+  {
+    "message": "春节假期抽奖活动",
+    "expectedIntent": "customer_service_faq"
+  },
+  {
+    "message": "SKU-09871 先叫仓库发货，不够的话再去催采购，采购再找供应商",
+    "expectedIntent": "fulfillment_flow"
+  },
+  {
+    "message": "SKU-09871 触发库存预警，当前库存 10，安全库存 50",
+    "expectedIntent": "stock_alert"
+  },
+  {
+    "message": "订单 10086 审核通过后请处理发货流程",
+    "expectedIntent": "order_process"
+  },
+  {
+    "message": "今天天气怎么样",
+    "expectedIntent": "unknown"
+  }
+]

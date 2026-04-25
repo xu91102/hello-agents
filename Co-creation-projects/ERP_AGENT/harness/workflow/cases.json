@@ -1,0 +1,147 @@
+[
+  {
+    "name": "sufficient_stock_no_purchase",
+    "queryArgs": {
+      "sku": "WGXB02000001",
+      "required_qtys": {
+        "WGXB02000001": 2
+      }
+    },
+    "inventoryRows": [
+      {
+        "skuCode": "WGXB02000001",
+        "skuId": 101,
+        "skuName": "测试SKU-充足",
+        "productName": "测试商品-充足",
+        "itemNo": "WGXB02000001",
+        "warehouseClassification": 1,
+        "operationTeamId": 11,
+        "status": 1,
+        "statusText": "充足",
+        "highWarnNum": 2,
+        "ordinaryWarnNum": 1,
+        "safetyStock": 1,
+        "warehouseId": 5001,
+        "warehouseName": "国内中转仓A",
+        "totalQty": 10,
+        "availableQty": 10,
+        "lockedQty": 0
+      }
+    ],
+    "expect": {
+      "queryType": "sku",
+      "status": "sufficient",
+      "alertLevel": "none",
+      "procurementRequired": false,
+      "deficitQty": 0,
+      "shouldTriggerPurchase": false,
+      "inventoryMethod": "sku"
+    }
+  },
+  {
+    "name": "high_risk_overseas_alert_triggers_waiting_for_approval",
+    "queryArgs": {
+      "sku": "WGXB02000002",
+      "required_qtys": {
+        "WGXB02000002": 1
+      }
+    },
+    "inventoryRows": [
+      {
+        "skuCode": "WGXB02000002",
+        "skuId": 102,
+        "skuName": "测试SKU-高危",
+        "productName": "测试商品-高危",
+        "itemNo": "WGXB02000002",
+        "warehouseClassification": 2,
+        "operationTeamId": 22,
+        "status": 1,
+        "statusText": "高危预警",
+        "highWarnNum": 3,
+        "ordinaryWarnNum": 2,
+        "safetyStock": 1,
+        "warehouseId": 6002,
+        "warehouseName": "越南灯饰仓",
+        "totalQty": 1,
+        "availableQty": 1,
+        "lockedQty": 0
+      }
+    ],
+    "purchaseApply": {
+      "applyId": 92001,
+      "applyNumber": "CGXQ202604240001",
+      "applySkuId": 82001,
+      "skuCode": "WGXB02000002",
+      "qty": 2,
+      "supplierId": 7001,
+      "supplierName": "ces112",
+      "estimatedArrivalDate": "2026-04-30",
+      "status": "created",
+      "applyCreated": true,
+      "approvalQuantity": 2,
+      "warehouseId": null,
+      "warehouseName": null,
+      "overseasWarehouseId": 6002,
+      "overseasWarehouseName": "越南灯饰仓",
+      "virtualWarehouseId": null,
+      "virtualWarehouseName": null,
+      "operationTeamId": 22,
+      "operationTeamName": "运营二组"
+    },
+    "expect": {
+      "queryType": "sku",
+      "status": "sufficient",
+      "alertLevel": "high_risk",
+      "procurementRequired": true,
+      "deficitQty": 2,
+      "shouldTriggerPurchase": true,
+      "workflowStatus": "waiting_for_approval",
+      "inventoryMethod": "sku",
+      "purchaseMapping": {
+        "warehouseId": null,
+        "overseasWarehouseId": 6002,
+        "virtualWarehouseId": null,
+        "operationTeamId": 22
+      }
+    }
+  },
+  {
+    "name": "product_name_query_routes_to_product_api",
+    "queryArgs": {
+      "product_name": "春节假期活动商品",
+      "required_qtys": {
+        "春节假期活动商品": 1
+      }
+    },
+    "inventoryRows": [
+      {
+        "skuCode": "WGXB02000003",
+        "skuId": 103,
+        "skuName": "测试SKU-名称查询",
+        "productName": "春节假期活动商品",
+        "itemNo": "WGXB02000003",
+        "warehouseClassification": 1,
+        "operationTeamId": 33,
+        "status": 1,
+        "statusText": "充足",
+        "highWarnNum": 1,
+        "ordinaryWarnNum": 1,
+        "safetyStock": 1,
+        "warehouseId": 5003,
+        "warehouseName": "国内中转仓B",
+        "totalQty": 5,
+        "availableQty": 5,
+        "lockedQty": 0
+      }
+    ],
+    "expect": {
+      "queryType": "productName",
+      "status": "sufficient",
+      "alertLevel": "none",
+      "procurementRequired": false,
+      "deficitQty": 0,
+      "shouldTriggerPurchase": false,
+      "inventoryMethod": "productName"
+    }
+  }
+]

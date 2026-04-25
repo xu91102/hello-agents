@@ -1,0 +1,41 @@
+{
+  "name": "qqpgerp-agent",
+  "version": "1.0.0",
+  "description": "QQPGERP 多 Agent 系统 - 库存查询 + 物流协调",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only --watch src --ignore-watch dist --ignore-watch data --ignore-watch node_modules src/index.ts",
+    "start:watch": "pnpm run dev",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "example:inventory": "ts-node examples/query-inventory.ts",
+    "example:logistics": "ts-node examples/coordinate-logistics.ts",
+    "test": "jest --testPathPattern=src",
+    "harness:customer-service": "ts-node scripts/customer-service-harness.ts",
+    "harness:workflow": "ts-node scripts/workflow-harness.ts",
+    "harness:approval": "ts-node scripts/approval-harness.ts",
+    "harness": "pnpm run harness:customer-service && pnpm run harness:workflow && pnpm run harness:approval"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "llamaindex": "^0.12.1",
+    "mammoth": "^1.12.0",
+    "openai": "^4.67.1",
+    "pino": "^9.5.0",
+    "pino-pretty": "^11.3.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.16.0",
+    "@types/uuid": "^10.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.4"
+  }
+}

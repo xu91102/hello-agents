@@ -1,0 +1,44 @@
+[
+  {
+    "message": "开店服务费付了以后能不能退？",
+    "expectedQuestionIncludes": "交了开店服务费",
+    "expectedKeywords": ["三天", "退款"],
+    "expectNeedsHuman": false
+  },
+  {
+    "message": "支付服务费后你们会不会联系我？",
+    "expectedQuestionIncludes": "支付开店服务费后",
+    "expectedKeywords": ["行政专员", "微信"],
+    "expectNeedsHuman": false
+  },
+  {
+    "message": "如何进行充值？",
+    "expectedQuestionIncludes": "如何进行充值",
+    "expectedKeywords": ["银行卡", "云闪付"],
+    "expectNeedsHuman": false
+  },
+  {
+    "message": "提现一般什么时候到账？",
+    "expectedQuestionIncludes": "提现什么时候",
+    "expectedKeywords": ["周一", "周五"],
+    "expectNeedsHuman": false
+  },
+  {
+    "message": "你们的虾皮平台网站是什么？",
+    "expectedQuestionIncludes": "虾皮平台网站",
+    "expectedKeywords": ["Shopee"],
+    "expectNeedsHuman": false
+  },
+  {
+    "message": "春节假期抽奖活动",
+    "expectedQuestionIncludes": "春节假期是不是有抽奖活动",
+    "expectedKeywords": ["抽奖时间", "3 次"],
+    "expectNeedsHuman": false
+  },
+  {
+    "message": "帮我写一首关于春天的诗",
+    "expectedQuestionIncludes": "",
+    "expectedKeywords": [],
+    "expectNeedsHuman": true
+  }
+]

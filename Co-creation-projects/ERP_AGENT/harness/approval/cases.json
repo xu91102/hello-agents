@@ -1,0 +1,141 @@
+[
+  {
+    "name": "approve_resume_success",
+    "kind": "approve",
+    "approvalId": "approval-harness-approve-1",
+    "applyId": 93001,
+    "applyNumber": "CGXQ202604240101",
+    "applySkuId": 83001,
+    "skuCode": "WGXB02000101",
+    "qty": 2,
+    "supplierId": 7101,
+    "supplierName": "ces112",
+    "estimatedArrivalDate": "2026-05-01",
+    "detail": {
+      "Id": 93001,
+      "Number": "CGXQ202604240101",
+      "ApplicantId": 10086,
+      "Applicant": "管理员",
+      "ExpectArrivalDate": "2026-05-01",
+      "PurchaseApplySkuList": [
+        {
+          "Id": 83001,
+          "SkuId": 103001,
+          "SupplierId": 7101,
+          "SupplierName": "ces112",
+          "PurchaseUrl": "https://example.com/purchase/1",
+          "ApprovalQuantity": 2,
+          "WarehouseId": 5001,
+          "WarehouseName": "国内中转仓A",
+          "OperationTeamId": 51,
+          "OperationTeamName": "运营一组",
+          "PriceWithTax": 12.5,
+          "PriceWithoutTax": 11.5,
+          "TaxRate": 0.13,
+          "SubtotalWithTax": 25,
+          "SubtotalWithoutTax": 23,
+          "IsTax": 1,
+          "PurchasePrice": 12.5
+        }
+      ]
+    },
+    "expect": {
+      "finalTaskStatus": "completed",
+      "approvalQuantity": 2
+    }
+  },
+  {
+    "name": "patch_qty_before_approve",
+    "kind": "patch_then_approve",
+    "approvalId": "approval-harness-approve-2",
+    "applyId": 93002,
+    "applyNumber": "CGXQ202604240102",
+    "applySkuId": 83002,
+    "skuCode": "WGXB02000102",
+    "qty": 2,
+    "patchQty": 5,
+    "supplierId": 7102,
+    "supplierName": "ces113",
+    "estimatedArrivalDate": "2026-05-02",
+    "detail": {
+      "Id": 93002,
+      "Number": "CGXQ202604240102",
+      "ApplicantId": 10010,
+      "Applicant": "管理员",
+      "ExpectArrivalDate": "2026-05-02",
+      "PurchaseApplySkuList": [
+        {
+          "Id": 83002,
+          "SkuId": 103002,
+          "SupplierId": 7102,
+          "SupplierName": "ces113",
+          "PurchaseUrl": "https://example.com/purchase/2",
+          "ApprovalQuantity": 2,
+          "WarehouseId": 5002,
+          "WarehouseName": "国内中转仓B",
+          "OperationTeamId": 52,
+          "OperationTeamName": "运营二组",
+          "PriceWithTax": 8,
+          "PriceWithoutTax": 7,
+          "TaxRate": 0.13,
+          "SubtotalWithTax": 16,
+          "SubtotalWithoutTax": 14,
+          "IsTax": 1,
+          "PurchasePrice": 8
+        }
+      ]
+    },
+    "expect": {
+      "finalTaskStatus": "completed",
+      "approvalQuantity": 5
+    }
+  },
+  {
+    "name": "reject_success",
+    "kind": "reject",
+    "approvalId": "approval-harness-reject-1",
+    "applyId": 93003,
+    "applyNumber": "CGXQ202604240103",
+    "applySkuId": 83003,
+    "skuCode": "WGXB02000103",
+    "qty": 3,
+    "supplierId": 7103,
+    "supplierName": "ces114",
+    "estimatedArrivalDate": "2026-05-03",
+    "expect": {
+      "finalTaskStatus": "rejected"
+    }
+  },
+  {
+    "name": "cancel_success",
+    "kind": "cancel",
+    "approvalId": "approval-harness-cancel-1",
+    "applyId": 93004,
+    "applyNumber": "CGXQ202604240104",
+    "applySkuId": 83004,
+    "skuCode": "WGXB02000104",
+    "qty": 1,
+    "supplierId": 7104,
+    "supplierName": "ces115",
+    "estimatedArrivalDate": "2026-05-04",
+    "expect": {
+      "finalTaskStatus": "cancelled"
+    }
+  },
+  {
+    "name": "timeout_expiry",
+    "kind": "timeout",
+    "approvalId": "approval-harness-timeout-1",
+    "applyId": 93005,
+    "applyNumber": "CGXQ202604240105",
+    "applySkuId": 83005,
+    "skuCode": "WGXB02000105",
+    "qty": 4,
+    "supplierId": 7105,
+    "supplierName": "ces116",
+    "estimatedArrivalDate": "2026-05-05",
+    "expect": {
+      "finalTaskStatus": "expired"
+    }
+  }
+]
